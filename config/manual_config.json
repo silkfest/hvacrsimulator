@@ -1,0 +1,108 @@
+{
+    "manufacturers": {
+        "copeland": "Copeland",
+        "danfoss": "Danfoss",
+        "ebm-papst": "Ebm-papst",
+        "bitzer": "Bitzer",
+        "sporlan": "Sporlan",
+        "ziehl": "Ziehl-Abegg",
+        "alco": "Alco",
+        "emerson": "Emerson",
+        "carel": "Carel",
+        "honeywell": "Honeywell",
+        "johnson": "Johnson Controls",
+        "refcomp": "Refcomp",
+        "tecumseh": "Tecumseh",
+        "dixell": "Dixell",
+        "kelvion": "Kelvion",
+        "lu-ve": "LU-VE",
+        "frick": "Frick",
+        "vilter": "Vilter",
+        "york": "York",
+        "trane": "Trane",
+        "hillphoenix": "Hillphoenix",
+        "hussmann": "Hussmann",
+        "keeptrite": "KeepRite",
+        "heatcraft": "Heatcraft",
+        "larkin": "Larkin",
+        "zerozone": "Zero Zone",
+        "arneg": "Arneg",
+        "metalfrio": "MetalFrio",
+        "carrier": "Carrier",
+        "lennox": "Lennox",
+        "dixell": "Dixell",
+        "ke2": "KE2",
+        "danfoss-rack": "Danfoss Rack",
+        "emerson-rack": "Emerson Rack",
+        "heatcraft-rack": "Heatcraft Rack",
+        "keeptrite-rack": "KeepRite Rack",
+        "larkin-rack": "Larkin Rack",
+        "zerozone-rack": "Zero Zone Rack",
+        "arneg-rack": "Arneg Rack",
+        "metalfrio-rack": "MetalFrio Rack",
+        "carrier-rack": "Carrier Rack",
+        "lennox-rack": "Lennox Rack",
+        "emerson-e2": "Emerson E2",
+        "microthermo": "MicroThermo",
+        "danfoss-akc": "Danfoss AKC"
+    },
+    "component_types": {
+        "compressors": {
+            "keywords": ["compressor", "comp"],
+            "subtypes": ["semi-hermetic", "scroll", "reciprocating", "screw"]
+        },
+        "valves": {
+            "keywords": ["valve", "txv", "exv", "solenoid"],
+            "subtypes": ["expansion", "solenoid", "check", "pressure"]
+        },
+        "fans": {
+            "keywords": ["fan", "blower"],
+            "subtypes": ["condenser", "evaporator", "ec", "ac"]
+        },
+        "evaporators": {
+            "keywords": ["evap", "coil", "heat exchanger"],
+            "subtypes": ["dx", "flooded", "plate", "shell and tube"]
+        },
+        "controls": {
+            "keywords": ["control", "controller", "thermostat", "e2", "mtalliance", "akc", "rack controller"],
+            "subtypes": ["electronic", "mechanical", "digital", "rack controller", "supervisory control", "case control"]
+        },
+        "condensers": {
+            "keywords": ["condenser", "condensing unit"],
+            "subtypes": ["air-cooled", "water-cooled", "evaporative"]
+        },
+        "receivers": {
+            "keywords": ["receiver", "accumulator"],
+            "subtypes": ["liquid", "suction"]
+        },
+        "filters": {
+            "keywords": ["filter", "drier"],
+            "subtypes": ["liquid", "suction", "oil"]
+        },
+        "racks": {
+            "keywords": ["rack", "parallel rack", "refrigeration rack"],
+            "subtypes": ["parallel", "distributed", "centralized", "modular"]
+        },
+        "cases": {
+            "keywords": ["case", "display case", "refrigerated case"],
+            "subtypes": ["reach-in", "walk-in", "display", "prep"]
+        },
+        "heaters": {
+            "keywords": ["heater", "defrost", "electric heater"],
+            "subtypes": ["defrost", "anti-sweat", "case", "evaporator"]
+        }
+    },
+    "model_patterns": [
+        "[A-Z0-9]+-[A-Z0-9]+",
+        "[A-Z]+[0-9]+",
+        "[A-Z][0-9]+[A-Z]",
+        "[0-9]+[A-Z]+[0-9]+",
+        "R[0-9]+",
+        "PR[0-9]+",
+        "DR[0-9]+",
+        "E2 [A-Z]+-[A-Z0-9]+",
+        "AK-CC[0-9]+",
+        "AK-SM[0-9]+",
+        "MT[0-9]+[A-Z]?"
+    ]
+} 

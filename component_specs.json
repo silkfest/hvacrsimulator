@@ -1,0 +1,130 @@
+{
+    "version": "1.0",
+    "refrigerant": "R-448A",
+    "components": {
+        "compressors": {
+            "ZB58KCE-TFD": {
+                "type": "Semi-hermetic",
+                "manufacturer": "Copeland",
+                "refrigerant": "R-448A",
+                "max_discharge_temp_f": 275,
+                "oil_type": "POE 32",
+                "normal_operating_ranges": {
+                    "suction_pressure_psig": [35, 45],
+                    "discharge_pressure_psig": [180, 220],
+                    "discharge_temp_f": [160, 200],
+                    "superheat_f": [8, 15],
+                    "compressor_amps": [10, 15]
+                },
+                "alarm_conditions": [
+                    "high_discharge_temp",
+                    "low_suction_pressure",
+                    "high_motor_current",
+                    "oil_pressure_failure"
+                ],
+                "manual_reference": "Copeland AE4-1327",
+                "safety_warnings": {
+                    "high_discharge_temp": "Shut down if discharge temperature exceeds 275°F for more than 5 minutes",
+                    "low_suction_pressure": "Check for low charge or restriction if suction pressure below 20 psig"
+                }
+            }
+        },
+        "expansion_valves": {
+            "AKV 10-6": {
+                "type": "Electronic Expansion Valve",
+                "manufacturer": "Danfoss",
+                "refrigerant": "R-448A",
+                "normal_operating_ranges": {
+                    "superheat_f": [8, 15],
+                    "valve_position_percent": [20, 80]
+                },
+                "alarm_conditions": [
+                    "valve_stuck_open",
+                    "valve_stuck_closed",
+                    "high_superheat",
+                    "low_superheat"
+                ],
+                "manual_reference": "Danfoss AKV Service Manual",
+                "safety_warnings": {
+                    "high_superheat": "Check for restriction or low charge if superheat exceeds 30°F",
+                    "low_superheat": "Check for overcharge or valve malfunction if superheat below 5°F"
+                }
+            }
+        },
+        "condenser_fans": {
+            "EC-3E": {
+                "type": "EC Fan",
+                "manufacturer": "Ebm-papst",
+                "normal_operating_ranges": {
+                    "fan_speed_percent": [60, 100],
+                    "discharge_pressure_psig": [180, 220]
+                },
+                "alarm_conditions": [
+                    "fan_failure",
+                    "low_speed",
+                    "high_discharge_pressure"
+                ],
+                "manual_reference": "Ebm-papst EC-3E Installation Guide",
+                "safety_warnings": {
+                    "fan_failure": "Immediate attention required if fan fails to operate",
+                    "high_discharge_pressure": "Check condenser cleanliness and fan operation if pressure exceeds 220 psig"
+                }
+            }
+        }
+    },
+    "system_thresholds": {
+        "safety_critical": {
+            "max_discharge_temp_f": 275,
+            "min_suction_pressure_psig": 20,
+            "max_discharge_pressure_psig": 250,
+            "min_subcooling_f": 5,
+            "max_superheat_f": 30
+        },
+        "warning": {
+            "high_discharge_temp_f": 200,
+            "low_suction_pressure_psig": 35,
+            "high_discharge_pressure_psig": 220,
+            "low_subcooling_f": 8,
+            "high_superheat_f": 20
+        }
+    },
+    "diagnostic_rules": {
+        "low_charge": {
+            "symptoms": [
+                "low_suction_pressure",
+                "high_superheat",
+                "low_subcooling",
+                "high_discharge_temp"
+            ],
+            "confidence_threshold": 0.85,
+            "next_steps": [
+                "Check sight glass for bubbles",
+                "Measure subcooling at condenser",
+                "Verify refrigerant charge",
+                "Check for leaks"
+            ],
+            "manual_references": [
+                "Copeland AE4-1327: Section 3.2",
+                "Danfoss AKV Service Manual: Page 45"
+            ]
+        },
+        "high_discharge_temp": {
+            "symptoms": [
+                "high_discharge_temp",
+                "high_discharge_pressure",
+                "low_condenser_fan_speed"
+            ],
+            "confidence_threshold": 0.90,
+            "next_steps": [
+                "Check condenser fan operation",
+                "Verify condenser cleanliness",
+                "Check for non-condensables",
+                "Verify proper refrigerant charge"
+            ],
+            "manual_references": [
+                "Copeland AE4-1327: Section 4.1",
+                "Ebm-papst EC-3E Installation Guide: Page 12"
+            ]
+        }
+    }
+} 
