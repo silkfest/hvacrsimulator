@@ -1,0 +1,14 @@
+# requirements.txt — Dependencies for Refrigeration Rack Simulator
+
+langchain
+supabase
+openai  # Optional, for OpenAI integration
+anthropic  # Optional, for Claude integration
+google-generativeai  # For Gemini LLM
+python-dotenv  # For loading API keys/configs
+rich  # For enhanced CLI output
+tqdm  # For progress bars during embedding
+pypdf  # For manual/pdf parsing
+unstructured  # For extracting from technical PDFs
+fastapi  # Optional, for future web interface
+uvicorn  # Optional, for running FastAPI
