@@ -8,6 +8,10 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import sys
 from colorama import init, Fore, Style
+
+# Add project root to Python path
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
 from scripts.manual_processor import ManualProcessor, ManualInfo
 
 

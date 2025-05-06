@@ -1,6 +1,7 @@
 # requirements.txt — Dependencies for Refrigeration Rack Simulator
 
 langchain
+langchain-community  # Dependency for langchain
 supabase
 openai  # Optional, for OpenAI integration
 anthropic  # Optional, for Claude integration

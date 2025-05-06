@@ -6,9 +6,10 @@ Uses LangChain for embedding and similarity search of refrigeration manuals.
 from typing import Dict, List, Optional, Union
 import os
 from dataclasses import dataclass
-from langchain.vectorstores import SupabaseVectorStore
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import SupabaseVectorStore
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from supabase.client import Client, create_client
 from dotenv import load_dotenv
 import json
 
@@ -33,21 +34,24 @@ class VectorSearch:
         load_dotenv()
         
         # Initialize Supabase connection
-        self.supabase_url = os.getenv("SUPABASE_URL")
-        self.supabase_key = os.getenv("SUPABASE_ANON_KEY")
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_ANON_KEY")
         
-        if not self.supabase_url or not self.supabase_key:
+        if not supabase_url or not supabase_key:
             raise ValueError("Supabase credentials not found in environment variables")
+        
+        # Create Supabase client
+        supabase_client: Client = create_client(supabase_url, supabase_key)
         
         # Initialize embeddings
         self.embeddings = OpenAIEmbeddings()
         
-        # Initialize vector store
+        # Initialize vector store with client
         self.vector_store = SupabaseVectorStore(
+            client=supabase_client,
             embedding=self.embeddings,
-            supabase_url=self.supabase_url,
-            supabase_key=self.supabase_key,
-            table_name="document_embeddings"
+            table_name="document_embeddings",
+            query_name="match_documents"
         )
         
         # Initialize text splitter for chunking documents

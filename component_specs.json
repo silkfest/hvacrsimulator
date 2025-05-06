@@ -10,11 +10,26 @@
                 "max_discharge_temp_f": 275,
                 "oil_type": "POE 32",
                 "normal_operating_ranges": {
-                    "suction_pressure_psig": [35, 45],
-                    "discharge_pressure_psig": [180, 220],
-                    "discharge_temp_f": [160, 200],
-                    "superheat_f": [8, 15],
-                    "compressor_amps": [10, 15]
+                    "suction_pressure_psig": [
+                        35,
+                        45
+                    ],
+                    "discharge_pressure_psig": [
+                        180,
+                        220
+                    ],
+                    "discharge_temp_f": [
+                        160,
+                        200
+                    ],
+                    "superheat_f": [
+                        8,
+                        15
+                    ],
+                    "compressor_amps": [
+                        10,
+                        15
+                    ]
                 },
                 "alarm_conditions": [
                     "high_discharge_temp",
@@ -24,7 +39,7 @@
                 ],
                 "manual_reference": "Copeland AE4-1327",
                 "safety_warnings": {
-                    "high_discharge_temp": "Shut down if discharge temperature exceeds 275°F for more than 5 minutes",
+                    "high_discharge_temp": "Shut down if discharge temperature exceeds 275\u00c2\u00b0F for more than 5 minutes",
                     "low_suction_pressure": "Check for low charge or restriction if suction pressure below 20 psig"
                 }
             }
@@ -35,8 +50,14 @@
                 "manufacturer": "Danfoss",
                 "refrigerant": "R-448A",
                 "normal_operating_ranges": {
-                    "superheat_f": [8, 15],
-                    "valve_position_percent": [20, 80]
+                    "superheat_f": [
+                        8,
+                        15
+                    ],
+                    "valve_position_percent": [
+                        20,
+                        80
+                    ]
                 },
                 "alarm_conditions": [
                     "valve_stuck_open",
@@ -46,8 +67,8 @@
                 ],
                 "manual_reference": "Danfoss AKV Service Manual",
                 "safety_warnings": {
-                    "high_superheat": "Check for restriction or low charge if superheat exceeds 30°F",
-                    "low_superheat": "Check for overcharge or valve malfunction if superheat below 5°F"
+                    "high_superheat": "Check for restriction or low charge if superheat exceeds 30\u00c2\u00b0F",
+                    "low_superheat": "Check for overcharge or valve malfunction if superheat below 5\u00c2\u00b0F"
                 }
             }
         },
@@ -56,8 +77,14 @@
                 "type": "EC Fan",
                 "manufacturer": "Ebm-papst",
                 "normal_operating_ranges": {
-                    "fan_speed_percent": [60, 100],
-                    "discharge_pressure_psig": [180, 220]
+                    "fan_speed_percent": [
+                        60,
+                        100
+                    ],
+                    "discharge_pressure_psig": [
+                        180,
+                        220
+                    ]
                 },
                 "alarm_conditions": [
                     "fan_failure",
@@ -114,7 +141,7 @@
                 "high_discharge_pressure",
                 "low_condenser_fan_speed"
             ],
-            "confidence_threshold": 0.90,
+            "confidence_threshold": 0.9,
             "next_steps": [
                 "Check condenser fan operation",
                 "Verify condenser cleanliness",
@@ -127,4 +154,4 @@
             ]
         }
     }
-} 
+}

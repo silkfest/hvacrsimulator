@@ -10,6 +10,11 @@ import json
 from typing import Dict, List, Optional
 import re
 from dataclasses import dataclass
+
+# Add project root to Python path
+import sys
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
 from embeddings.embedding_pipeline import EmbeddingPipeline
 
 
